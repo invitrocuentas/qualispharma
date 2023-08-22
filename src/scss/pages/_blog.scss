@@ -1,0 +1,11 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.blog{
+    &_entries{
+        padding-block: 6rem 7.5rem;
+        .grilla{
+            @include m.grid(3, 40px 20px);
+        }
+    }
+}

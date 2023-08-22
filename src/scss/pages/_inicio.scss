@@ -1,0 +1,94 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.hero{
+    height: calc(100vh - 116px);
+    @include m.flex(center, 0);
+    flex-direction: column;
+    .splide{
+        position: absolute;
+        inset: 0;
+        img{
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    .contenedor{
+        position: relative;
+        z-index: 2;
+    }
+    .contenido{
+        width: min(100%, 700px);
+        margin-top: -30px;
+        p, a, h1{
+            color: v.$blanco;
+        }
+        p{
+            font-size: 1.75em;
+            font-family: v.$medium;
+            line-height: 1.5em;
+            width: min(100%, 460px);
+            margin: 40px 0 35px;
+        }
+        a{
+            @include m.boton(240px, 50px, v.$verde, v.$blanco);
+            margin: 0 auto;
+        }
+        p, h1{
+            @include m.text-shadow;
+        }
+        h1{
+            font-family: v.$black;
+        }
+    }
+}
+
+.our_products{
+    padding: 6.5rem 0;
+    .splide{
+        padding: 4px;
+    }
+    h2{
+        text-align: center;
+        font-family: v.$black;
+        color: v.$celeste;
+        margin-bottom: 60px;
+    }
+}
+
+.partners{
+    background: rgba($color: v.$celeste, $alpha: 0.2);
+    padding: 4rem 0;
+    h2{
+        color: v.$celeste;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .card_partner{
+        width: 100%;
+        position: relative;
+        aspect-ratio: 16/9;
+        background: v.$blanco;
+        border-radius: 20px;
+        overflow: hidden;
+        padding: 8px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+}
+
+.objetivos{
+    padding: 3.5rem 0 7rem;
+    h2{
+        color: v.$celeste;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    .row{
+        column-gap: 34px;
+    }
+}

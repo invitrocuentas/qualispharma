@@ -1,0 +1,9 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.productos{
+    padding: 4rem 0 5.5rem;
+    &_grid{
+        @include m.grid(3, 40px 20px);
+    }
+}

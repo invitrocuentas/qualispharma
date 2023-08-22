@@ -1,0 +1,61 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.objetivo{
+    flex: 1;
+    position: relative;
+    border-radius: 40px;
+    overflow: hidden;
+    height: 280px;
+    @include m.flex(center, 10px);
+    flex-direction: column;
+    &::before{
+        position: absolute;
+        content: '';
+        inset: 0;
+        width: 100%;
+        z-index: -1;
+        user-select: none;
+        height: 100%;
+        background: transparent linear-gradient(180deg, #ADE44C 0%, #62BDBE 100%) 0% 0% no-repeat padding-box;
+    }
+    &>div{
+        width: 100%;
+    }
+    &_img{
+        display: block;
+        max-width: 180px;
+        margin: 0 auto;
+        @include m.transition;
+        aspect-ratio: 1/1;
+        img{
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+    &_txt{
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: opacity 0.25s, height 0.25s;
+        transition-property: ease;
+        padding-inline: 17px;
+        p{
+            color: v.$blanco;
+            font-family: v.$regular;
+            font-size: 15px;
+            text-align: center;
+        }
+    }
+    &:hover{
+        .objetivo{
+            &_img{
+                max-width: 130px;
+            }
+            &_txt{
+                height: auto;
+                opacity: 1;
+            }
+        }
+    }
+}

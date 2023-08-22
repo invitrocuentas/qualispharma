@@ -1,0 +1,58 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.form_box{
+    width: min(100%, 610px);
+    background: v.$blanco;
+    @include m.shadow(0,3px,6px,v.$sombra);
+    padding: 8% 9%;
+    border-radius: 24px;
+    margin: 0 auto;
+    &>p{
+        color: v.$gris;
+        margin-bottom: 20px;
+    }
+    form{
+        textarea, input, span, p{
+            display: block;
+            width: 100%;
+        }
+        .wpcf7-form-control-wrap{
+            margin-bottom: 8px;
+        }
+        textarea, input{
+            border: 1px solid #D5D5D5;
+            border-radius: 28px;
+            min-height: 48px;
+            padding-inline: 16px;
+            font-size: 1.025rem;
+        }
+        [type="submit"]{
+            margin-top: 20px;
+            border: 2px solid v.$verde;
+            color: v.$blanco;
+            font-family: v.$bold;
+            position: relative;
+            background: transparent;
+            background: transparent linear-gradient(180deg, #319E32 0%, #57BB0C 100%) 0% 0% no-repeat padding-box;
+            /*&::before{
+                content: '';
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                z-index: -1;
+                @include m.transition;
+                height: 100%;
+            }*/
+            &:hover{
+                background: transparent;
+                color: v.$verde;
+            }
+        }
+        textarea{
+            padding-block: 16px;
+            resize: none;
+            height: 120px;
+        }
+    }
+}

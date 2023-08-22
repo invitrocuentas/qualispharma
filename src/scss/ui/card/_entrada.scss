@@ -1,0 +1,76 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.noticia, .entrada{
+    border: 1px solid v.$negro2;
+    border-radius: 40px;
+    padding: 1.25rem 1.25rem 2.25rem;
+    background: v.$blanco;
+    @include m.flex(center, 26px);
+    flex-direction: column;
+
+    &>div{
+        width: 100%;
+    }
+    &_thumbnail{
+        div{
+            aspect-ratio: 1/.8;
+            background: v.$negro2;
+            border: 1px solid v.$gris;
+            border-radius: 40px;
+            width: 100%;
+            height: auto;
+        }
+        img{
+            aspect-ratio: 1/.8;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+    &_info{
+        p{
+            color: v.$negro;
+            &:nth-child(1){
+                font-size: 1.3rem;
+                color: v.$celeste;
+                font-family: v.$bold;
+                margin-bottom: 14px;
+            }
+            &:nth-child(2){
+                line-height: 1.6em;
+            }
+        }
+    }
+
+    &_content{
+        padding: 4rem 0;
+        background: v.$blanco;
+
+        img{
+            display: block;
+            margin-bottom: 30px;
+        }
+        p, li, span, b, strong{
+            color: v.$negro2;
+            font-size: 1.175em;
+            line-height: 1.6em;
+        }
+    }
+}
+
+.similares{
+    background: rgba($color: v.$celeste, $alpha: .2);
+    padding-block: 5.5rem;
+    .splide{
+        &__track{
+            padding: 6px !important;
+        }
+    }
+    h2{
+        font-family: v.$bold;
+        color: v.$celeste;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+}

@@ -1,0 +1,57 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.card_product{
+    width: 100%;
+    &_bg{
+        top: 0;
+        left: 0;
+        background: transparent linear-gradient(180deg, #54B4D4 0%, #6AC0B2 100%) 0% 0% no-repeat padding-box;
+        @include m.shadow(0,3px,6px,v.$sombra);
+        border-radius: 50px;
+        width: 86%;
+        height: 100%;
+        opacity: 0.2;
+        z-index: -1;
+    }
+    &_content{
+        width: 100%;
+        @include m.flex(space-between, 0);
+        padding: 1rem 0 1rem 2rem;
+    }
+    &_info{
+        width: 32%;
+        p{
+            &:nth-child(1){
+                color: v.$celeste;
+                font-family: v.$bold;
+            }
+            &:nth-child(2){
+                margin-top: 8px;
+                color: v.$negro;
+                font-family: v.$medium;
+            }
+        }
+        a{
+            @include m.boton(140px, 40px, v.$verde, v.$verde);
+            margin: 12px auto 0;
+            &:hover{
+                color: v.$verde;
+            }
+        }
+    }
+    &_image{
+        width: 67%;
+        img{
+            width: 100%;
+            filter: drop-shadow(0 3px 6px v.$sombra);
+            @include m.transition;
+            transform: scale(0.925);
+        }
+    }
+    &:hover{
+        img{
+            transform: scale(1);
+        }
+    }
+}

@@ -1,0 +1,24 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.somos{
+    padding: 5.5rem 0;
+    .contenido{
+        width: min(100%, 980px);
+        margin: 0 auto;
+    }
+    h2, p{
+        text-align: center;
+    }
+    h2{
+        color: v.$celeste;
+        font-family: v.$bold;
+        margin-bottom: 50px;
+    }
+    p{
+        color: v.$negro2;
+        font-family: v.$regular;
+        font-weight: 100;
+        line-height: 1.5em;
+    }
+}

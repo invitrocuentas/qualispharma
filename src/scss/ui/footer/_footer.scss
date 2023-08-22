@@ -1,0 +1,81 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+footer{
+    background: transparent linear-gradient(180deg, #54B4D4 0%, #7BC99B 100%) 0% 0% no-repeat padding-box;
+    padding: 2.5rem 0 5rem;
+    .grilla{
+        display: grid;
+        grid-template-columns: 0.9fr 0.9fr 1.2fr;
+        align-items: stretch;
+        &>div{
+            width: 100%;
+            padding-inline: 5%;
+            &>p{
+                color: v.$blanco;
+                font-family: v.$bold;
+                margin-bottom: 15px;
+            }
+            &:not(:first-child){
+                border-left: 1px solid v.$blanco;
+            }
+        }
+    }
+    .nav{
+        &_menu, &_logo{
+            display: flex;
+            align-items: center;
+        }
+        &bar_links{
+            width: 100%;
+        }
+    }
+    .logo{
+        width: 100%;
+        max-width: 320px;
+    }
+    ul{
+        list-style: none;
+        a{
+            color: v.$blanco;
+        }
+        &.ul_menu{
+            column-count: 2;
+            width: fit-content;
+            margin-inline: auto;
+            column-gap: 30px;
+
+            li{
+                margin-bottom: 16px;
+            }
+
+            a{
+                font-size: 1em;
+                font-weight: 400;
+            }
+        }
+        &.information{
+            li{
+                @include m.flex(flex-start, 16px);
+                align-items: flex-start;
+                flex-wrap: nowrap;
+                &:not(:last-child){
+                    margin-bottom: 12px;
+                }
+            }
+            p, a{
+                font-size: 1.025em;
+                font-weight: 500;
+            }
+        }
+        svg{
+            @include m.contain(20px);
+            fill: v.$blanco;
+            color: v.$blanco;
+            path{
+                fill: v.$blanco;
+                color: v.$blanco;
+            }
+        }
+    }
+}

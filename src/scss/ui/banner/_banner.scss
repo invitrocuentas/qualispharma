@@ -1,0 +1,16 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.banner{
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center right !important;
+    min-height: 32vh;
+    @include m.flex(center, 0);
+    flex-direction: column;
+    h1{
+        color: v.$blanco;
+        font-family: v.$black;
+        @include m.text-shadow;
+    }
+}
